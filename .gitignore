@@ -103,3 +103,9 @@ ENV/
 
 # vscode
 settings.json
+
+# notebooks folder
+notebooks/*.png
+
+# data folder
+data/*.csv
