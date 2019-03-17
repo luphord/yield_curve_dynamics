@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-"""The setup script."""
+'''The setup script.'''
 
 from setuptools import setup, find_packages
 
@@ -16,12 +16,12 @@ requirements = ['Click>=6.0',
                 'jupyter>=1.0',
                 'pandas>=0.24']
 
-setup_requirements = [ ]
+setup_requirements = []
 
-test_requirements = [ ]
+test_requirements = []
 
 setup(
-    author="luphord",
+    author='luphord',
     author_email='luphord@protonmail.com',
     classifiers=[
         'Development Status :: 2 - Pre-Alpha',
@@ -31,14 +31,14 @@ setup(
         'Programming Language :: Python :: 3',
         'Programming Language :: Python :: 3.7',
     ],
-    description="A cursory look at the dynamics of zero coupon bond yield curves.",
+    description='A cursory look at the dynamics of zero coupon bond yield curves.',
     entry_points={
         'console_scripts': [
             'yield_curve_dynamics=yield_curve_dynamics.cli:main',
         ],
     },
     install_requires=requirements,
-    license="MIT license",
+    license='MIT license',
     long_description=readme + '\n\n' + history,
     include_package_data=True,
     keywords='yield_curve_dynamics',
