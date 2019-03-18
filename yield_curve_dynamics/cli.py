@@ -1,18 +1,13 @@
 # -*- coding: utf-8 -*-
 
-"""Console script for yield_curve_dynamics."""
-import sys
+'''Main command line interface for Yield Curve Dynamics.'''
 import click
 
+from .data import load_csv
 
-@click.command()
-def main(args=None):
-    """Console script for yield_curve_dynamics."""
-    click.echo("Replace this message by putting your code into "
-               "yield_curve_dynamics.cli.main")
-    click.echo("See click documentation at http://click.pocoo.org/")
-    return 0
+@click.group(name='yield_curve_dynamics')
+def main():
+    '''A cursory look at the dynamics of zero coupon bond yield curves.'''
+    pass
 
-
-if __name__ == "__main__":
-    sys.exit(main())  # pragma: no cover
+main.add_command(load_csv)
