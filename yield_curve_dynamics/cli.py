@@ -11,4 +11,5 @@ def main():
     '''A cursory look at the dynamics of zero coupon bond yield curves.'''
     pass
 
+
 main.add_command(cli_load_csv)

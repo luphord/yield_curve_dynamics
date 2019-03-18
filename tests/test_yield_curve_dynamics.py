@@ -7,7 +7,6 @@
 import unittest
 from click.testing import CliRunner
 
-from yield_curve_dynamics import yield_curve_dynamics
 from yield_curve_dynamics import cli
 
 
@@ -28,7 +27,7 @@ class TestYield_curve_dynamics(unittest.TestCase):
         runner = CliRunner()
         result = runner.invoke(cli.main)
         assert result.exit_code == 0
-        assert 'yield_curve_dynamics.cli.main' in result.output
+        assert 'yield_curve_dynamics' in result.output
         help_result = runner.invoke(cli.main, ['--help'])
         assert help_result.exit_code == 0
         assert '--help  Show this message and exit.' in help_result.output

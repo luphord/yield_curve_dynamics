@@ -1,4 +1,3 @@
-import sys
 import click
 import pandas as pd
 from nelson_siegel_svensson import NelsonSiegelSvenssonCurve
