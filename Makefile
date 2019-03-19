@@ -59,6 +59,9 @@ test: ## run tests quickly with the default Python
 test-all: ## run tests on every Python version with tox
 	tox
 
+presentation: ## create a HTML presentation from notebook
+	jupyter nbconvert notebooks/Yield\ Curve\ Dynamics.ipynb --to slides --output-dir .
+
 coverage: ## check code coverage quickly with the default Python
 	coverage run --source yield_curve_dynamics setup.py test
 	coverage report -m
