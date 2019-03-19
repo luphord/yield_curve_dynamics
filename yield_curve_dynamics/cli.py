@@ -4,6 +4,7 @@
 import click
 
 from .data import cli_load_csv
+from .video import cli_video
 
 
 @click.group(name='yield_curve_dynamics')
@@ -13,3 +14,4 @@ def main():
 
 
 main.add_command(cli_load_csv)
+main.add_command(cli_video)
