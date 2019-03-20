@@ -59,6 +59,9 @@ test: ## run tests quickly with the default Python
 test-all: ## run tests on every Python version with tox
 	tox
 
+transform: data/ecb_data.zip ## Load data as provided by ECB and transform to parameters CSV
+	yield_curve_dynamics transform -i data/ecb_data.zip -o data/euryieldcurve.csv
+
 presentation: ## create a HTML presentation from notebook
 	jupyter nbconvert notebooks/Yield\ Curve\ Dynamics.ipynb --to slides --output-dir .
 
