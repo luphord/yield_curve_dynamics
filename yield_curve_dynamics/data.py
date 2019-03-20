@@ -46,13 +46,17 @@ def cli_transform(ecb_input, csv_output):
     '''Load data as provided by ECB and transform to parameters CSV.'''
     click.echo('Loading ECB data from {}'.format(ecb_input))
     with zipfile.ZipFile(ecb_input) as z:
-        with io.TextIOWrapper(z.open('data.csv', 'r')) as f:
-            reader = csv.DictReader(f)
-            filtered = [dict(param=row['DATA_TYPE_FM'].lower(),
-                             date=row['TIME_PERIOD'],
-                             value=row['OBS_VALUE'])
-                        for row in reader
-                        if row['DATA_TYPE_FM'] in _relevant_params]
+        csv_files = [name for name in z.namelist()
+                     if name.lower().endswith('.csv')]
+        filtered = []
+        for csv_file in csv_files:
+            with io.TextIOWrapper(z.open(csv_file, 'r')) as f:
+                reader = csv.DictReader(f)
+                filtered += [dict(param=row['DATA_TYPE_FM'].lower(),
+                                  date=row['TIME_PERIOD'],
+                                  value=row['OBS_VALUE'])
+                             for row in reader
+                             if row['DATA_TYPE_FM'] in _relevant_params]
 
     pivot = defaultdict(dict)
     for row in filtered:
