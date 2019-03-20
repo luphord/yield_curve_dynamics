@@ -2,9 +2,11 @@ from matplotlib import animation
 import matplotlib.pyplot as plt
 
 
-def create_animation(curves, timegrid, n_frames):
-
-    step = int(len(curves) / n_frames)
+def create_animation(curves, timegrid, n_frames=None):
+    if not n_frames:
+        step = 1
+    else:
+        step = int(len(curves) / n_frames)
     assert step > 0
 
     fig, ax = plt.subplots(figsize=(12, 8))

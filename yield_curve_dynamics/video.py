@@ -15,6 +15,6 @@ def cli_video(csv_file):
     curves = list(load_csv(csv_file))
     click.echo('Successfully loaded {} curves'.format(len(curves)))
     t = np.linspace(0, 30, 200)
-    anim = create_animation(curves, t, 5)
+    anim = create_animation(curves, t)
     anim.save('yieldcurve.mp4')
     return 0
