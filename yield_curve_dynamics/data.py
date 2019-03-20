@@ -48,7 +48,7 @@ def cli_transform(ecb_input, csv_output):
     with zipfile.ZipFile(ecb_input) as z:
         with io.TextIOWrapper(z.open('data.csv', 'r')) as f:
             reader = csv.DictReader(f)
-            filtered = [dict(param=row['DATA_TYPE_FM'],
+            filtered = [dict(param=row['DATA_TYPE_FM'].lower(),
                              date=row['TIME_PERIOD'],
                              value=row['OBS_VALUE'])
                         for row in reader
@@ -61,7 +61,7 @@ def cli_transform(ecb_input, csv_output):
             d[row['param']] = row['value']
 
     pivot = sorted(pivot.values(), key=lambda row: row['date'])
-    headers = ['date'] + _relevant_params
+    headers = ['date'] + [p.lower() for p in _relevant_params]
     click.echo(f'Writing Nelson-Siegel-Svensson parameters to {csv_output}')
     with open(csv_output, 'w') as f:
         writer = csv.DictWriter(f, headers)
