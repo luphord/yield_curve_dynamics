@@ -1,4 +1,4 @@
-.PHONY: clean clean-test clean-pyc clean-build docs help
+.PHONY: clean clean-test clean-pyc clean-build docs help output
 .DEFAULT_GOAL := help
 
 define BROWSER_PYSCRIPT
@@ -63,10 +63,12 @@ transform: data/ecb_data.zip ## Load data as provided by ECB and transform to pa
 	yield_curve_dynamics transform -i data/ecb_data.zip -o data/euryieldcurve.csv
 
 video: data/euryieldcurve.csv ## Load CSV file and create a yield curve video
-	yield_curve_dynamics video -f data/euryieldcurve.csv
+	yield_curve_dynamics video -f data/euryieldcurve.csv -o output/euryieldcurve.mp4
 
 presentation: ## create a HTML presentation from notebook
-	jupyter nbconvert notebooks/Yield\ Curve\ Dynamics.ipynb --to slides --output-dir .
+	jupyter nbconvert notebooks/Yield\ Curve\ Dynamics.ipynb --to slides --output-dir output
+
+output: presentation video ## generate all output files
 
 coverage: ## check code coverage quickly with the default Python
 	coverage run --source yield_curve_dynamics setup.py test

@@ -110,4 +110,7 @@ notebooks/*.png
 # data folder
 data/*.csv
 data/*.zip
-Yield Curve Dynamics.slides.html
+
+# output folder
+output/*.mp4
+output/*.html
