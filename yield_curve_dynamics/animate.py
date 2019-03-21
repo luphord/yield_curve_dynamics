@@ -2,9 +2,10 @@ from matplotlib import animation
 import matplotlib.pyplot as plt
 
 
-def create_animation(curves, timegrid, n_frames=None):
+def create_animation(curves, timegrid, n_frames=None, frame_millis=100):
     if not n_frames:
         step = 1
+        n_frames = len(curves)
     else:
         step = int(len(curves) / n_frames)
     assert step > 0
@@ -28,5 +29,5 @@ def create_animation(curves, timegrid, n_frames=None):
         return (line, ttl)
 
     return animation.FuncAnimation(fig, animate, init_func=init,
-                                   frames=n_frames, interval=100,
+                                   frames=n_frames, interval=frame_millis,
                                    blit=True)
