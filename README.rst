@@ -18,15 +18,14 @@ Yield Curve Dynamics
 
 A cursory look at the dynamics of zero coupon bond yield curves.
 
-
+* Data source: Zero coupon bond yield curve data published by European Central Bank (ECB)
+* Visualization: Animated plot shows a video of historic yield curves
+* Analysis: Principal Component Analysis (PCA) is applied to (shifted) log diffs of keyrates in order to reduce the dimensionality of curve movements
+* Key insight: Three factors (parallel shift, steepening and hump) can capture the majority of curve movements
+* Structure: Functionality is contained in the `yield_curve_dynamics` Python package, presentation is performed using Jupyter notebooks in the `notebooks` directory
 * Free software: MIT license
 * Documentation: https://yield-curve-dynamics.readthedocs.io.
 
-
-Features
---------
-
-* TODO
 
 Credits
 -------
