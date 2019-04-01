@@ -11,8 +11,9 @@ _URL = (
 
 
 def download(start_date, end_date, aaa_curves, output_file):
-    url = _URL.format(dict(aaa='A' if aaa_curves else 'C',
-                           start_date=start_date, end_date=end_date))
+    url = _URL.format(aaa=('A' if aaa_curves else 'C'),
+                      start_date=start_date,
+                      end_date=end_date)
     with urlopen(url) as response:
         for line in response:
             output_file.write(line)
