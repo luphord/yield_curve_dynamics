@@ -59,6 +59,11 @@ test: ## run tests quickly with the default Python
 test-all: ## run tests on every Python version with tox
 	tox
 
+download: ## Download raw yield curve data parameters from ECB
+	yield_curve_dynamics download -s 2009-01-01 -e 2018-12-31 -f data/ecb_data.zip
+
+data/ecb_data.zip: download
+
 transform: data/ecb_data.zip ## Load data as provided by ECB and transform to parameters CSV
 	yield_curve_dynamics transform -i data/ecb_data.zip -o data/euryieldcurve.csv
 
