@@ -64,16 +64,20 @@ data/ecb_data.zip:
 
 download: data/ecb_data.zip ## Download raw yield curve data parameters from ECB
 
-transform: data/ecb_data.zip ## Load data as provided by ECB and transform to parameters CSV
+data/euryieldcurve.csv: data/ecb_data.zip
 	yield_curve_dynamics transform -i data/ecb_data.zip -o data/euryieldcurve.csv
 
-video: data/euryieldcurve.csv ## Load CSV file and create a yield curve video
+transform: data/euryieldcurve.csv ## Load data as provided by ECB and transform to parameters CSV
+
+output/euryieldcurve.mp4: data/euryieldcurve.csv
 	yield_curve_dynamics video -f data/euryieldcurve.csv -o output/euryieldcurve.mp4 -n 250 -m 40
+
+video: output/euryieldcurve.mp4 ## Load CSV file and create a yield curve video
 
 presentation: ## create a HTML presentation from notebook
 	jupyter nbconvert notebooks/Yield\ Curve\ Dynamics.ipynb --to slides --output-dir output
 
-output: presentation video ## generate all output files
+output: presentation output/euryieldcurve.mp4 ## generate all output files
 
 coverage: ## check code coverage quickly with the default Python
 	coverage run --source yield_curve_dynamics setup.py test
