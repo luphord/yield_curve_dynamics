@@ -24,7 +24,8 @@ def download(start_date, end_date, aaa_curves, output_file):
               help='start date for curve download')
 @click.option('-e', '--end-date', type=str, required=True,
               help='end date for curve download')
-@click.option('--aaa-curves/--no-aaa-curves', default=True,
+@click.option('-a', '--aaa-curves/--no-aaa-curves', default=True,
+              show_default=True,
               help='Download curve data bootstrapped from AAA rated bonds')
 @click.option('-f', '--zip-file',
               type=click.Path(file_okay=True, dir_okay=False,
