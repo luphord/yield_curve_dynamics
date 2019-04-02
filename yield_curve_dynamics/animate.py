@@ -3,7 +3,7 @@ import matplotlib.pyplot as plt
 
 
 def create_animation(curves, timegrid, n_frames=None, frame_millis=100):
-    if not n_frames:
+    if not n_frames or n_frames >= len(curves):
         step = 1
         n_frames = len(curves)
     else:
