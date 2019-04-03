@@ -25,7 +25,9 @@ A cursory look at the dynamics of zero coupon bond yield curves.
 * Structure: Functionality is contained in the `yield_curve_dynamics` Python package, presentation is performed using Jupyter notebooks in the `notebooks` directory
 * Free software: MIT license
 * Documentation: https://yield-curve-dynamics.readthedocs.io.
-* [Slides](https://rawcdn.githack.com/luphord/yield_curve_dynamics/5d435148137b815b2bcc9d48244a1356253defd1/lightning_talk_2019-04-04/Yield%20Curve%20Dynamics.slides.html)
+* Slides_
+
+.. _Slides: https://rawcdn.githack.com/luphord/yield_curve_dynamics/5d435148137b815b2bcc9d48244a1356253defd1/lightning_talk_2019-04-04/Yield%20Curve%20Dynamics.slides.html
 
 
 Credits
