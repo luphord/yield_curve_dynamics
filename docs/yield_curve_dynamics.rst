@@ -28,6 +28,14 @@ yield\_curve\_dynamics.data module
     :undoc-members:
     :show-inheritance:
 
+yield\_curve\_dynamics.download module
+--------------------------------------
+
+.. automodule:: yield_curve_dynamics.download
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
 yield\_curve\_dynamics.keyrates module
 --------------------------------------
 
