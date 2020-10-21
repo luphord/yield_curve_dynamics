@@ -6,8 +6,8 @@ Yield Curve Dynamics
 .. image:: https://img.shields.io/pypi/v/yield_curve_dynamics.svg
         :target: https://pypi.python.org/pypi/yield_curve_dynamics
 
-.. image:: https://img.shields.io/travis/luphord/yield_curve_dynamics.svg
-        :target: https://travis-ci.org/luphord/yield_curve_dynamics
+.. image:: https://travis-ci.com/luphord/yield_curve_dynamics.svg
+        :target: https://travis-ci.com/luphord/yield_curve_dynamics
 
 .. image:: https://readthedocs.org/projects/yield-curve-dynamics/badge/?version=latest
         :target: https://yield-curve-dynamics.readthedocs.io/en/latest/?badge=latest
